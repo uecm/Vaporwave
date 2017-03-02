@@ -4,21 +4,172 @@
 	<title>Form Page</title>
 </head>
 
-<style type="">
+<style type="text/css">
 	.input{
 		width: 70%;
 	}	
+
+	div{
+		display: block;
+		float: left;
+		
+		background-color: violet;
+		border: solid;
+		border-radius: 10px;
+		border-color: lightgrey;
+		border-width: 5px;
+		width: 250px;
+		height: 230px;
+		margin: 15px;
+		padding: 10px;
+
+		color: white;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 30px;
+	}
+	p{
+		margin: 5px;
+		color: white;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-size: 20px;
+		font-weight: 500;
+	}
+	.showInfoCount {
+		  background: lightgrey;
+		  width: 300px;
+		  height: 150px;
+		  font-size: 30px;
+		  border: solid;
+		  border-radius: 10px;
+		  text-align: center;
+		  line-height: 475%;
+		  float: left;
+		  cursor: pointer;
+		  padding: 5px 10px;
+		  color: white;
+		}
 </style>
 
-<body>
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  console.log('ready');
 
+  function calculate() {
+    var i,
+      trues = 0,
+      checked = $('input[type="radio"]:checked');
+    for (i = 0; i < checked.length; i++) {
+      if ($(checked[i]).val() == 1) {
+        trues++;
+      }
+    }
+    return trues;
+  }
+
+  $(document).on('click', '#showInfoCount', function() {
+    console.log('Total trues: ', calculate());
+    alert("You managed to get " + calculate() + " correct answer(s).");
+  });
+})
+
+</script>
+
+<body background="images/main.jpg">
+
+<div>
 <form>
-	First name:<br>
-  	<input class="input" type="text" name="firstname"><br>
-  	Last name:<br>
-  	<input class="input" type="text" name="lastname">
-  	<input type="submit" name="Submit">
+	<p>It is physically impossible for pigs to look straight up into the sky.</p><hr>
+	<label><input type="radio" name="1" value="1"> True <br></label>
+  	<label><input type="radio" name="1" value="0"> False <br></label>
 </form>
+</div>
+<!-- true -->
+
+<div>
+<form>
+	<p>The brain of an ostrich is bigger than its eyes.</p><hr>
+  	<label><input type="radio" name="2" value="0"> True <br></label>
+  	<label><input type="radio" name="2" value="1"> False <br></label>
+</form>
+</div>
+<!-- false -->
+
+<div>
+<form>
+	<p>There are over 50,000 spiders and other arachnids within one acre of grass.</p><hr>
+  	<label><label><input type="radio" name="3" value="1"> True <br></label>
+  	<label><input type="radio" name="3" value="0"> False <br></label>
+</form>
+</div>
+<!-- true -->
+
+<div>
+<form>
+	<p>The day with the greatest heart attack rate is Monday.</p><hr>
+  	<label><input type="radio" name="4" value="1"> True <br></label>
+  	<label><input type="radio" name="4" value="0"> False <br></label>
+</form>
+</div>
+<!-- true -->
+
+<div>
+<form>
+	<p>There is a phobia of being afraid of belly buttons.</p><hr>
+  	<label><input type="radio" name="5" value="1"> True <br></label>
+  	<label><input type="radio" name="5" value="0"> False <br></label>
+</form>
+</div>
+<!-- true -->
+
+<div>
+<form>
+	<p>Dr. Seuss was Dr. Seuss' real name.</p><hr>
+  	<label><input type="radio" name="6" value="0"> True <br></label>
+  	<label><input type="radio" name="6" value="1"> False <br></label>
+</form>
+</div>
+<!-- false -->
+
+<div>
+<form>
+	<p>The roar of a lion can be heard up to 5 miles away.</p><hr>
+  	<label><input type="radio" name="7" value="1"> True <br></label>
+  	<label><input type="radio" name="7" value="0"> False <br></label>
+</form>
+</div>
+<!-- true -->
+
+<div>
+<form>
+	<p>Laughing for 15 minutes will do your body just as good as taking a 2 hour nap.</p><hr>
+  	<label><input type="radio" name="8" value="1"> True <br></label>
+  	<label><input type="radio" name="8" value="0"> False <br></label>
+</form>
+</div>
+<!-- true -->
+
+<div>
+<form>
+	<p>Men are 37% more likely to see a psychiatrist than women.</p><hr>
+  	<label><input type="radio" name="9" value="0"> True <br></label>
+  	<label><input type="radio" name="9" value="1"> False <br></label>
+</form>
+</div>
+<!-- false -->
+
+<div>
+<form>
+	<p>The first phone number was "1".</p><hr>
+  	<label><input type="radio" name="10" value="1"> True <br></label>
+  	<label><input type="radio" name="10" value="0"> False <br></label>
+</form>
+</div>
+<!-- true -->
+
+<div id="showInfoCount" class="showInfoCount">Calculate count</div>
+
+
 
 </body>
 </html>
